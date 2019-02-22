@@ -17,6 +17,10 @@ def yearHelper(year):
     else:
         return 366
 
+def monthHelper(month):
+    daysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    return daysOfMonth[month - 1]
+
 def daysBetweenDates(year1, month1, day1, year2, month2, day2):
     ##
     # Your code here.
@@ -24,6 +28,20 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
     return "Not Implemented"
 
 # Test routine
+
+# yearHelper, input year = 2020, returns days = 366
+passed = "Failed"
+days = yearHelper(2020)
+if(days == 366):
+    passed = "Passed"
+print("yearHelper, input year = 2020, returns days = 366: ", passed)
+
+# monthHelper, input month = 7, returns daysInMonth = 31
+passed = "Failed"
+daysInMonth = monthHelper(7)
+if(daysInMonth == 31):
+    passed = "Passed"
+print("monthHelper, input month = 7, returns daysInMonth = 31: ", passed)
 
 def test():
     test_cases = [((2012,1,1,2012,2,28), 58), 
